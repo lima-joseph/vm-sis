@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Controle de Ponto</title>
+    <link rel="stylesheet" href="/web/src/assets/styles/bootstrap.css">
+    <link rel="stylesheet" href="/web/src/assets/styles/styles.css">
+    <link rel="stylesheet" href="/web/src/assets/components/icons/icons.css">
+</head>
+<body class="fw-medium">
+    <nav class="navbar bg-white bg-light d-flex border-bottom px-4">
+        <div class="d-flex align-items-center text-center">
+            <a href="/web/src/pages/home.html">
+                <img src="/web/src/assets/components/imgs/logo.png" alt="Logo" class="logo text-center">
+            </a>
+        </div>
+        <button class="btn btn-dark">Sair</button>
+    </nav>
+
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-md-2 sidebar bg-white border-end p-2 ">
+                <h4 class="pb-2 border-bottom my-3">Sistema</h4>
+                <a class="border btn w-100 mb-3 text-start sidebar-link transition" href="/web/src/pages/funcionarios.html"><i class="bi bi-person"></i> Funcionários</a>
+                <a class="border btn w-100 mb-3 text-start sidebar-link transition" href="/web/src/pages/pontos.html"><i class="bi bi-envelope-paper"></i> Ponto</a>
+            </div>
+
+            <div class="col-md-10 bg-light content">
+                <div class="row">
+                    <div class="mb-4 pb-2 border-bottom row">
+                        <h4>Gerenciar Funcionários</h4>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-9">
+                        <button class="btn btn-dark">Adicionar Funcionario</button>
+                        <button class="btn btn-dark">Remover Funcionario</button>
+                        <button class="btn btn-dark">Editar Funcionario</button>
+                    </div>
+                    <div class="col-md-3">
+                        <form action="" id="search">
+                            <div class="input-group">
+                                <span class="input-group-text" id="search-icon">
+                                <i class="bi bi-search"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Pesquisar..." aria-label="Pesquisar" aria-describedby="search-icon">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+
+                <table class="table table-striped border">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Cargo</th>
+                            <th scope="col">Valor Hora (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="4" class="text-center">
+                                <div class="spinner-border text-center" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
