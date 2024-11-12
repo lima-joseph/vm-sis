@@ -15,28 +15,27 @@
                 <img src="../assets/components/imgs/logo.png" alt="Logo" class="logo text-center">
             </a>
         </div>
-        <button class="btn btn-dark">Sair</button>
+        <button class="btn btn-dark" id="logout">Sair</button>
     </nav>
 
     <div class="container-fluid p-0">
         <div class="row g-0">
             <div class="col-md-2 sidebar bg-white border-end p-2 ">
                 <h4 class="pb-2 border-bottom my-3">Sistema</h4>
-                <a class="border btn w-100 mb-3 text-start sidebar-link transition" href="../pages/funcionarios.html"><i class="bi bi-person"></i> Funcionários</a>
+                <a class="border btn w-100 mb-3 text-start sidebar-link transition" href="../pages/funcionarios.html"><i class="bi bi-person"></i> Funcionarios</a>
                 <a class="border btn w-100 mb-3 text-start sidebar-link transition" href="../pages/pontos.html"><i class="bi bi-envelope-paper"></i> Ponto</a>
             </div>
 
             <div class="col-md-10 bg-light content">
                 <div class="row">
                     <div class="mb-4 pb-2 border-bottom row">
-                        <h4>Gerenciar Funcionários</h4>
+                        <h4>Gerenciar Funcionarios</h4>
                     </div>
                 </div>
-                <div class="row mb-3">
+                <div class="row mb-1">
                     <div class="col-md-9">
-                        <button class="btn btn-dark">Adicionar Funcionario</button>
-                        <button class="btn btn-dark">Remover Funcionario</button>
-                        <button class="btn btn-dark">Editar Funcionario</button>
+                        <button class="btn btn-dark" id="btnAdicionarFuncionario" data-bs-toggle="modal" data-bs-target="#modalAdicionarFuncionario">Adicionar Funcionário</button>
+                        <button class="btn btn-dark" id="btnRemoverFuncionario" data-bs-toggle="modal" data-bs-target="#modalRemoverFuncionario">Remover Funcionário</button>
                     </div>
                     <div class="col-md-3">
                         <form action="" id="search">
@@ -44,12 +43,14 @@
                                 <span class="input-group-text" id="search-icon">
                                 <i class="bi bi-search"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Pesquisar..." aria-label="Pesquisar" aria-describedby="search-icon">
+                                <input type="text" class="form-control" placeholder="Pesquisar..." aria-label="Pesquisar" aria-describedby="search-icon" id="lupaFuncionarios">
                             </div>
                         </form>
                     </div>
                 </div>
-                
+                <div class="row mb-3" id="alerts-space">
+
+                </div>
 
                 <table class="table table-striped border">
                     <thead>
@@ -74,6 +75,72 @@
         </div>
     </div>
 
+    <!-- Modais -->
+    <!-- Modal para Adicionar Funcionário -->
+<div class="modal fade" id="modalAdicionarFuncionario" tabindex="-1" aria-labelledby="modalAddFuncionario" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalAddFuncionario">Adicionar</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="adicionarFuncionario">
+                    <div class="mb-3">
+                        <label for="idAdicionar">Id</label>
+                        <input type="text" class="form-control" id="idAdicionar" placeholder="Id do funcionário">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nomeAdicionar">Nome</label>
+                        <input type="text" class="form-control" id="nomeAdicionar" placeholder="Nome funcionário">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cargoAdicionar">Cargo</label>
+                        <select name="cargoAdicionar" id="cargoAdicionar" class="form-control">
+                            <option value="">Selecione uma opção</option>
+                            <option value="Soldador">Soldador</option>
+                            <option value="Montador">Montador</option>
+                            <option value="Caldeireiro">Caldeireiro</option>
+                            <option value="Pintor">Pintor</option>
+                            <option value="Ajudante">Ajudante</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="vhAdicionar">Valor/Hora</label>
+                        <input type="number" class="form-control" id="vhAdicionar" placeholder="Apenas número">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-dark m-2">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Remover Funcionário -->
+<div class="modal fade" id="modalRemoverFuncionario" tabindex="-1" aria-labelledby="modalRmFuncionario" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalRmFuncionario">Remover</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="removerFuncionario">
+                    <div class="mb-3">
+                        <label for="idRemover">Id</label>
+                        <input type="text" class="form-control" id="idRemover" placeholder="Id do funcionário">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-dark m-2">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="/src/assets/script/logout.js"></script>
+    <script src="/src/assets/script/script.js"></script>
+    <script src="/src/assets/script/routes/cadastarFuncionario.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

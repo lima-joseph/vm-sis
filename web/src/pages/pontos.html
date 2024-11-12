@@ -15,7 +15,7 @@
                 <img src="../assets/components/imgs/logo.png" alt="Logo" class="logo text-center">
             </a>
         </div>
-        <button class="btn btn-dark">Sair</button>
+        <button class="btn btn-dark" id="logout">Sair</button>
     </nav>
 
     <div class="container-fluid p-0">
@@ -33,19 +33,9 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col-md-9">
+                    <div class="col-md-12">
                         <button class="btn btn-dark">Marcar Ponto</button>
                         <button class="btn btn-dark">Excluir Ponto</button>
-                    </div>
-                    <div class="col-md-3">
-                        <form action="" id="search">
-                            <div class="input-group">
-                                <span class="input-group-text" id="search-icon">
-                                <i class="bi bi-search"></i>
-                                </span>
-                                <input type="text" class="form-control" placeholder="Pesquisar..." aria-label="Pesquisar" aria-describedby="search-icon">
-                            </div>
-                        </form>
                     </div>
                 </div>
                 
@@ -73,6 +63,14 @@
         </div>
     </div>
 
+    <!-- Modais -->
+    <div id="modals-container">
+
+    </div>
+    
+    <!-- Modal -->
+    <script src="/src/assets/script/logout.js"></script>
+    <script src="/src/assets/script/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
