@@ -34,19 +34,20 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-12">
-                        <button class="btn btn-dark">Marcar Ponto</button>
-                        <button class="btn btn-dark">Excluir Ponto</button>
+                        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalAdicionarPonto">Marcar Ponto</button>
+                        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalRemoverPonto">Excluir Ponto</button>
                     </div>
                 </div>
-                
+                <div class="row mb-3" id="alerts-space">
 
+                </div>
                 <table class="table table-striped border">
                     <thead>
                         <tr>
                             <th scope="col">Data</th>
                             <th scope="col">Entrada - Saida | 1</th>
                             <th scope="col">Entrada - Saida | 2</th>
-                            <th scope="col">Funcionario</th>
+                            <th scope="col">Funcionário</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,13 +65,81 @@
     </div>
 
     <!-- Modais -->
-    <div id="modals-container">
-
+    <div class="modal fade" id="modalAdicionarPonto" tabindex="-1" aria-labelledby="modalAddPonto" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalAddPonto">Marcar Ponto</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert-add p-2"></div>
+                    <form id="adicionarPonto">
+                        <div class="mb-3">
+                            <label for="dataAdicionar">Data</label>
+                            <input type="date" class="form-control" id="dataAdicionar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="seletorFuncionarios">Funcionário</label>
+                            <select class="form-select" id="seletorFuncionarios">
+                                <option value="">Selecione um funcionário</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="seletorEntradaSaida1">Entrada - Saída 1</label>
+                            <select class="form-select" id="seletorEntradaSaida1">
+                                <option value="">Selecione um Horário</option>
+                                <option value="07h00 - 12h00">07h00 - 12h00</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="seletorEntradaSaida2">Entrada - Saída 2</label>
+                            <select class="form-select" id="seletorEntradaSaida2">
+                                <option value="">Selecione um Horário</option>
+                                <option value="12h48 - 16h48">12h48 - 16h48</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-dark m-2">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para Remover Funcionário -->
+    <div class="modal fade" id="modalRemoverPonto" tabindex="-1" aria-labelledby="modalRmPonto" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalRmPonto">Remover</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="removerPonto">
+                        <div class="mb-3">
+                            <label for="dataRemover">Data</label>
+                            <input type="date" class="form-control" id="dataRemover" placeholder="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="seletorFuncionariosRemover">Funcionário</label>
+                            <select class="form-select" id="seletorFuncionariosRemover">
+                                <option value="">Selecione um funcionário</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-dark m-2">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     
     <!-- Modal -->
     <script src="/src/assets/script/logout.js"></script>
     <script src="/src/assets/script/script.js"></script>
+    <script src="/src/assets/script/alerts.js"></script>
+    <script src="/src/assets/script/routes/marcarPonto.js"></script>
+    <script src="/src/assets/script/routes/excluirPonto.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

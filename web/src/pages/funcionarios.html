@@ -62,13 +62,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th colspan="4" class="text-center">
-                                <div class="spinner-border text-center" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div>
-                            </tr>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -85,6 +78,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <div class="alert-add p-2"></div>
                 <form id="adicionarFuncionario">
                     <div class="mb-3">
                         <label for="idAdicionar">Id</label>
@@ -109,9 +103,9 @@
                         <label for="vhAdicionar">Valor/Hora</label>
                         <input type="number" class="form-control" id="vhAdicionar" placeholder="Apenas número">
                     </div>
-                </div>
-                <button type="submit" class="btn btn-dark m-2">Enviar</button>
-            </form>
+                    <button type="submit" class="btn btn-dark m-2">Enviar</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
@@ -140,7 +134,10 @@
 
     <script src="/src/assets/script/logout.js"></script>
     <script src="/src/assets/script/script.js"></script>
+    <script src="/src/assets/script/alerts.js"></script>
+    <script src="/src/assets/script/routes/buscarFuncionario.js"></script>
     <script src="/src/assets/script/routes/cadastarFuncionario.js"></script>
+    <script src="/src/assets/script/routes/removerFuncionario.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

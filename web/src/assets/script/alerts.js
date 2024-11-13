@@ -18,5 +18,5 @@ async function criarAlerta(tipo,mensagem,local,codIcone) {
     local.innerHTML = `<div class="alert p-2 alert-${tipo} alert-dismissible" role="alert" style="font-size:12px;"><i class="${icon}"></i> ${mensagem}</div>`;
     setTimeout(() =>{
     local.innerHTML = '';
-    },3000);
+    },5000);
 }
